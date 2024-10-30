@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1f2128;
+  color: #fff;
+}
+
+/* Add this to your CSS file */
+.nav-link {
+  @apply relative cursor-pointer;
+}
+
+.nav-link::after {
+  content: "";
+  @apply absolute w-full h-[2px] bg-[#c454e3] left-0 bottom-0;
+  @apply scale-x-0 origin-right transition-transform duration-300;
+}
+
+.nav-link:hover::after {
+  @apply scale-x-100 origin-left;
+}
